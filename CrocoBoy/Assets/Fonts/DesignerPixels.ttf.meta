@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: b9d108ca2d5896c4ca9aa6030c4bbe23
+timeCreated: 1501627801
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: DesignerPixels
+  fontNames:
+  - DesignerPixels
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

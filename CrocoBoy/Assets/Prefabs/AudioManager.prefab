@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1685771427170350}
+  m_IsPrefabParent: 1
+--- !u!1 &1685771427170350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4418720001941212}
+  - component: {fileID: 114022818518858810}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &4418720001941212
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1685771427170350}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 152.77875, y: 286.6923, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114022818518858810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1685771427170350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3559a42987215654ab93365258bcc15d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Coin
+    clip: {fileID: 8300000, guid: 70275a971877f864e9c3125c8b5272ec, type: 3}
+    volume: 1
+    pitch: 1.001
+    randomVolume: 0
+    randomPitch: 0
+    loop: 0
+  - name: Jump
+    clip: {fileID: 8300000, guid: c9f0f869278e8744c8b673b20b56570e, type: 3}
+    volume: 1
+    pitch: 1.196
+    randomVolume: 0
+    randomPitch: 0
+    loop: 0
+  - name: Dead
+    clip: {fileID: 8300000, guid: ce809041911fe964d8d778a2496466fa, type: 3}
+    volume: 1
+    pitch: 1.208
+    randomVolume: 0
+    randomPitch: 0
+    loop: 0
+  - name: Soundtrack1
+    clip: {fileID: 8300000, guid: aaead86928609714987864e0c31622e9, type: 3}
+    volume: 0.495
+    pitch: 0.99
+    randomVolume: 0
+    randomPitch: 0
+    loop: 1
+  - name: ButtonPress
+    clip: {fileID: 8300000, guid: ad5c305cc7c03ac479e885c5805c703e, type: 3}
+    volume: 1
+    pitch: 0.99
+    randomVolume: 0
+    randomPitch: 0
+    loop: 0
+  - name: ButtonHover
+    clip: {fileID: 8300000, guid: 8de935225368e66418800eb309a19d99, type: 3}
+    volume: 1
+    pitch: 0.99
+    randomVolume: 0
+    randomPitch: 0
+    loop: 0
+  - name: MusicMenu
+    clip: {fileID: 8300000, guid: 6119a38dfc783b14e93659d3c733ae9b, type: 3}
+    volume: 0.495
+    pitch: 0.99
+    randomVolume: 0
+    randomPitch: 0
+    loop: 1
+  - name: Boss1
+    clip: {fileID: 8300000, guid: 5a5f3e22a1769514faebb8ccbe37c96f, type: 3}
+    volume: 0.499
+    pitch: 0.99
+    randomVolume: 0
+    randomPitch: 0
+    loop: 1
+  - name: ManEatingPlantShoot
+    clip: {fileID: 8300000, guid: 3e78d338e7b09c14892247a38e42d6ad, type: 3}
+    volume: 1
+    pitch: 0.7
+    randomVolume: 0
+    randomPitch: 0.2
+    loop: 0
+  - name: Explosion
+    clip: {fileID: 8300000, guid: 343202ebe84a0c8458f49c502241fa79, type: 3}
+    volume: 0.5
+    pitch: 1.112
+    randomVolume: 0
+    randomPitch: 0.2
+    loop: 0
+  - name: WorldComplete
+    clip: {fileID: 8300000, guid: 1bcce1034eeb96849aa183f041d6085f, type: 3}
+    volume: 0.528
+    pitch: 0.851
+    randomVolume: 0
+    randomPitch: 0
+    loop: 0
+  - name: Wrong
+    clip: {fileID: 8300000, guid: cb12e29de10954e41a87cb001f94d98d, type: 3}
+    volume: 0.528
+    pitch: 0.851
+    randomVolume: 0
+    randomPitch: 0
+    loop: 0
+  - name: ShopTheme
+    clip: {fileID: 8300000, guid: 47c717ce674114340904b46e73533977, type: 3}
+    volume: 0.608
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+    loop: 0
+  - name: Soundtrack2
+    clip: {fileID: 8300000, guid: 081c3b7bcdd00974f85d2fc27a92bcd5, type: 3}
+    volume: 0.477
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+    loop: 0
