@@ -19,7 +19,7 @@ public class BossSceneManager : MonoBehaviour {
     {
         levelPassed = true;
         worldComplete.gameObject.SetActive(true);
-        LevelsMusicController.StartShopMusic();
+        StartCoroutine(LevelsMusicController.StartShopMusic());
         yield return new WaitForSeconds(2f);
         StartCoroutine(GameMaster.instance.NextLevel());
 

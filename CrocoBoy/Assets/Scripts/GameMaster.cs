@@ -87,8 +87,20 @@ public class GameMaster : MonoBehaviour {
         audioManager.PlaySound("Coin");
     }
 
+
+
+    private void DestroyEnemies()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemies){
+            Destroy(enemy);
+        }
+    }
+
     public IEnumerator OpenChest(Chest chest)
     {
+        DestroyEnemies();
         //Play coin sounds and increment amount of money
         for (int i = 0; i < chest.amountOfCoins; i++)
         {
@@ -103,6 +115,7 @@ public class GameMaster : MonoBehaviour {
 
     public IEnumerator OpenChestPreBoss(ChestPreBoss chest)
     {
+        DestroyEnemies();
         //Play coin sounds and increment amount of money
         for (int i = 0; i < chest.amountOfCoins; i++)
         {

@@ -36,11 +36,12 @@ public class LevelsMusicController : MonoBehaviour
         currentWorld++;
     }
 
-    public static void StartShopMusic()
+    public static IEnumerator StartShopMusic()
     {
         //Stop boss music (-1 because we incremented it in order to play Boss2 next time) and play WorldComplete sound
         AudioManager.instance.StopSound("Boss" + (currentWorld-1));
         AudioManager.instance.PlaySound("WorldComplete");
+        yield return new WaitForSeconds(2f);
         AudioManager.instance.PlaySound("ShopTheme");
     }
 

@@ -149,4 +149,11 @@ MonoBehaviour:
     pitch: 1
     randomVolume: 0
     randomPitch: 0
+    loop: 1
+  - name: Purchase
+    clip: {fileID: 8300000, guid: 09cb3a3e209b10d4a9db54ebc241a56c, type: 3}
+    volume: 1
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0.103
     loop: 0

@@ -20,14 +20,14 @@ public class ShopManager : MonoBehaviour {
     AudioManager audioManager;
 
     bool speedBoots = false;
-    int speedBootsPrice = 300;
+    int speedBootsPrice = 250;
     bool doubleJump = false;
-    int doubleJumpPrice = 400;
+    int doubleJumpPrice = 300;
     bool shield = false;
-    int shieldPrice = 500;
+    int shieldPrice = 350;
 
     //Boost
-    public float speedBoost = 4f;
+    public float speedBoost = 2f;
 
     void Start()
     {
@@ -101,10 +101,14 @@ public class ShopManager : MonoBehaviour {
     bool EnoughMoney(int price)
     {
         if (PlayerStats.money >= price)
+        {
             return true;
+        }
         else
+        {
             AudioManager.instance.PlaySound("Wrong");
-        return false;
+            return false;
+        }
 
     }
 
@@ -112,6 +116,8 @@ public class ShopManager : MonoBehaviour {
     {
         if (speedBoots && EnoughMoney(speedBootsPrice))
         {
+            AudioManager.instance.PlaySound("Purchase");
+
             PlayerStats.money -= speedBootsPrice;
             DisablePanel();
             Destroy(speedBootsUI.gameObject);
@@ -121,6 +127,8 @@ public class ShopManager : MonoBehaviour {
 
         if (doubleJump && EnoughMoney(doubleJumpPrice))
         {
+            AudioManager.instance.PlaySound("Purchase");
+
             PlayerStats.money -= doubleJumpPrice;
             DisablePanel();
             Destroy(doubleJumpUI.gameObject);
@@ -130,6 +138,7 @@ public class ShopManager : MonoBehaviour {
 
         if (shield && EnoughMoney(shieldPrice))
         {
+            AudioManager.instance.PlaySound("Purchase");
             //TODO
         }
     }
