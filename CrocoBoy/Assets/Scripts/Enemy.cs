@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public int HP;
     public float Speed;
 
-    private Animator animator;
+    public Animator animator;
 
     private bool alreadyHitted = false;
 
@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
         if (animator != null && HP > 0)
         {
             animator.Play("Hitted");
+
         }
             
         if (HP == 0)

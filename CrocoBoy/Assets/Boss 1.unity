@@ -373,6 +373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 3
   Speed: 0
+  animator: {fileID: 0}
   status: {fileID: 276040565}
   maxHealth: 3
   target: {fileID: 1433219010}
@@ -883,6 +884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 3
   Speed: 0
+  animator: {fileID: 0}
   status: {fileID: 1108662113}
   maxHealth: 3
   target: {fileID: 1433219010}

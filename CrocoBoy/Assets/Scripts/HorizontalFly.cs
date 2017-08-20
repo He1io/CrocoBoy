@@ -11,7 +11,7 @@ public class HorizontalFly : Enemy
 
     public int pointSelection;
 
-    SpriteRenderer renderer;
+    SpriteRenderer spriteRenderer;
 
     void Start()
     {
@@ -19,7 +19,7 @@ public class HorizontalFly : Enemy
 
         currentPoint = points[pointSelection];
 
-        renderer = transform.GetComponent<SpriteRenderer>();
+        spriteRenderer = transform.GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -48,6 +48,6 @@ public class HorizontalFly : Enemy
 
     private void Flip()
     {
-        renderer.flipX = !renderer.flipX;
+        spriteRenderer.flipX = !spriteRenderer.flipX;
     }
 }

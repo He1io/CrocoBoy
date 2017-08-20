@@ -6,11 +6,13 @@ public class Bee : Enemy {
 
     public Transform target;
 
-    SpriteRenderer renderer;
+    SpriteRenderer spriteRenderer;
 
     void Start()
     {
-        renderer = transform.GetComponent<SpriteRenderer>();
+        spriteRenderer = transform.GetComponent<SpriteRenderer>();
+
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 	
 	void Update () {
@@ -24,10 +26,27 @@ public class Bee : Enemy {
 
         if(transform.position.x > target.position.x)
         {
-            renderer.flipX = false;
+            spriteRenderer.flipX = false;
         }
         else
-            renderer.flipX = true;
+            spriteRenderer.flipX = true;
 
     }
+    override public void DamageEnemy()
+    {
+        HP--;
+
+        if (animator != null && HP > 0)
+        {
+            animator.Play("Hitted");
+
+        }
+
+        if (HP == 0)
+        {
+            GetComponent<EdgeCollider2D>().enabled = false;
+            StartCoroutine(GameMaster.instance.KillEnemy(this));
+        }
+    }
+
 }

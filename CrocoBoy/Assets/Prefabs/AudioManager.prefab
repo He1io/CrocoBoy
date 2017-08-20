@@ -101,7 +101,7 @@ MonoBehaviour:
     randomVolume: 0
     randomPitch: 0
     loop: 1
-  - name: Boss1
+  - name: Boss
     clip: {fileID: 8300000, guid: 5a5f3e22a1769514faebb8ccbe37c96f, type: 3}
     volume: 0.499
     pitch: 0.99
@@ -156,4 +156,11 @@ MonoBehaviour:
     pitch: 1
     randomVolume: 0
     randomPitch: 0.103
+    loop: 0
+  - name: Boss1Hitted
+    clip: {fileID: 8300000, guid: 372d751f114a6e6428d37983779a00bd, type: 3}
+    volume: 0.806
+    pitch: 0.701
+    randomVolume: 0
+    randomPitch: 0
     loop: 0

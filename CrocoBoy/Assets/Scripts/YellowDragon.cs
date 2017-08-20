@@ -8,12 +8,12 @@ public class YellowDragon : Enemy
 
     public int pointSelection;
 
-    SpriteRenderer renderer;
+    SpriteRenderer spriteRenderer;
 
     void Start()
     {
         currentPoint = points[pointSelection];
-        renderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -27,13 +27,13 @@ public class YellowDragon : Enemy
             //If the enemy gets to half of his path, flip the graphics 
             if (pointSelection == 2)
             {
-                renderer.flipX = !renderer.flipX;
+                spriteRenderer.flipX = !spriteRenderer.flipX;
             }
 
             if (pointSelection == points.Length)
             {
                 pointSelection = 0;
-                renderer.flipX = !renderer.flipX;
+                spriteRenderer.flipX = !spriteRenderer.flipX;
             }
 
             currentPoint = points[pointSelection];
