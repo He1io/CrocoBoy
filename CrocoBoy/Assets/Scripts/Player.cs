@@ -218,7 +218,19 @@ public class Player : MonoBehaviour {
         }
         
     }
- 
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Spike")
+        {
+            //DEAD
+            //Interrupt jump & falling animations just in case and play the dead one
+            animator.SetBool("Dead", true);
+            StartCoroutine(GameMaster.instance.KillPlayer(this));
+        }
+    }
+
+
     public void ActiveDoubleJump()
     {
         canDoubleJump = true;

@@ -89,7 +89,7 @@ public class GameMaster : MonoBehaviour {
 
 
 
-    private void DestroyEnemies()
+    public void DestroyEnemies()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 

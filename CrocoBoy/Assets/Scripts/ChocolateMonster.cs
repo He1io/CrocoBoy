@@ -7,7 +7,11 @@ public class ChocolateMonster : Enemy {
     [SerializeField]
     private StatusIndicator status;
 
-    public int maxHealth = 6;
+    public int maxHealth = 5;
+
+    public Transform lightning;
+    float lightningTime = 3f;
+    bool lightningActive = false;
 
     //Shoot
     public Transform target;
@@ -26,8 +30,10 @@ public class ChocolateMonster : Enemy {
 
     void Update()
     {
+        //StatusBar
         status.SetHealth(HP, maxHealth);
 
+        //Shoot
         if (HP == 1 && !boosted)
         {
             initialShootDelay = initialShootDelay*2/3;
@@ -43,6 +49,29 @@ public class ChocolateMonster : Enemy {
             shootDelay = initialShootDelay;
         }
 
+        //Lightning
+        if (lightningActive)
+        {
+            lightningTime -= Time.deltaTime;
+            if (lightningTime <= 0)
+            {
+                SpriteRenderer[] sprites = lightning.GetComponentsInChildren<SpriteRenderer>();
+                for (int i = 0; i < sprites.Length; i++)
+                {
+                    sprites[i].enabled = false;
+                }
+
+                Animator[] animators = lightning.GetComponentsInChildren<Animator>();
+                for (int i = 0; i < animators.Length; i++)
+                {
+                    animators[i].enabled = false;
+                }
+
+                lightning.GetComponent<BoxCollider2D>().enabled = false;
+                lightningTime = 3f;
+                lightningActive = false;
+            }
+        }
 
     }
 
@@ -62,6 +91,8 @@ public class ChocolateMonster : Enemy {
     {
         HP--;
 
+        StartCoroutine(ActiveMagicFlame());
+
         if (animator != null && HP > 0)
         {
             animator.Play("Hitted");
@@ -71,7 +102,33 @@ public class ChocolateMonster : Enemy {
 
         if (HP == 0)
         {
+            //Destroy all bees in order to advance to the next lvl 
+            GameMaster.instance.DestroyEnemies();
             StartCoroutine(GameMaster.instance.KillEnemy(this));
         }
+    }
+
+    private IEnumerator ActiveMagicFlame()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        SpriteRenderer[] sprites = lightning.GetComponentsInChildren<SpriteRenderer>();
+        for (int i = 0; i < sprites.Length; i++)
+        {
+            sprites[i].enabled = true;
+        }
+
+        Animator[] animators = lightning.GetComponentsInChildren<Animator>();
+        for (int i = 0; i < animators.Length; i++)
+        {
+            animators[i].enabled = true;
+            animators[i].Play("MagicFlame",0,0f);
+            AudioManager.instance.PlaySound("ChocolateMonsterFire");
+        }
+
+        lightning.GetComponent<BoxCollider2D>().enabled = true;
+
+
+        lightningActive = true;
     }
 }

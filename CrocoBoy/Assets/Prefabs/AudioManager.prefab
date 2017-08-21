@@ -103,7 +103,7 @@ MonoBehaviour:
     loop: 1
   - name: Boss
     clip: {fileID: 8300000, guid: 5a5f3e22a1769514faebb8ccbe37c96f, type: 3}
-    volume: 0.499
+    volume: 0.512
     pitch: 0.99
     randomVolume: 0
     randomPitch: 0
@@ -161,6 +161,13 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 372d751f114a6e6428d37983779a00bd, type: 3}
     volume: 0.806
     pitch: 0.701
+    randomVolume: 0
+    randomPitch: 0
+    loop: 0
+  - name: ChocolateMonsterFire
+    clip: {fileID: 8300000, guid: acb8c7c4ab4f92843bba80af6f2d31ab, type: 3}
+    volume: 0.554
+    pitch: 1.059
     randomVolume: 0
     randomPitch: 0
     loop: 0

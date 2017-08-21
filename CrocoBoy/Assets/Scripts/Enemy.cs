@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
 
     public Animator animator;
 
-    private bool alreadyHitted = false;
+    protected bool alreadyHitted = false;
 
     void Awake()
     {
@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    public virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (animator!=null && animator.GetCurrentAnimatorStateInfo(0).IsName("Hitted"))
         {
