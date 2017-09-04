@@ -125,7 +125,7 @@ public class GameMaster : MonoBehaviour {
         }
 
         StartCoroutine(NextLevel());
-        LevelsMusicController.StartBossMusic();
+        LevelsMusicController.StartShopMusic();
     }
 
     //NEXT LEVEL

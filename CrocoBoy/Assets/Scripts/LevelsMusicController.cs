@@ -28,26 +28,28 @@ public class LevelsMusicController : MonoBehaviour
         }
     }
 
-    public static void StartBossMusic()
-    {
-        //Stop world music and play boss music
-        instance.audioManager.StopSound("Soundtrack" + currentWorld);
-        instance.audioManager.PlaySound("Boss");
-        currentWorld++;
-    }
 
-    public static IEnumerator StartShopMusic()
+    public static void StartShopMusic()
     {
-        AudioManager.instance.StopSound("Boss");
-        AudioManager.instance.PlaySound("WorldComplete");
-        yield return new WaitForSeconds(2f);
+        instance.audioManager.StopSound("Soundtrack" + currentWorld);
         AudioManager.instance.PlaySound("ShopTheme");
     }
 
-    public static void StartNextWorldMusic()
+    public static void StartBossMusic()
     {
-        //Stop shop music and play next world music
+        //Stop shop music and play boss music
         instance.audioManager.StopSound("ShopTheme");
+        instance.audioManager.PlaySound("Boss");
+    }
+
+    public static IEnumerator StartNextWorldMusic()
+    {
+        AudioManager.instance.StopSound("Boss");
+        AudioManager.instance.PlaySound("WorldComplete");
+        currentWorld++;
+        yield return new WaitForSeconds(2f);
+
+        //Stop boss music and play next world music
         instance.audioManager.PlaySound("Soundtrack" + currentWorld);
     }
 

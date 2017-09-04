@@ -37,7 +37,17 @@ public class ShopManager : MonoBehaviour {
         {
             Debug.LogError("No audiomanager found!");
         }
-     }
+
+        if (Player.canDoubleJump == true)
+        {
+            Destroy(doubleJumpUI.gameObject);
+        }
+
+        if (PlayerStats.speedBoosted == true)
+        {
+            Destroy(speedBootsUI.gameObject);
+        }
+    }
 
     public void QuitGame()
     {
@@ -69,7 +79,7 @@ public class ShopManager : MonoBehaviour {
     public void NextLevel()
     {
         StartCoroutine(GameMaster.instance.NextLevel());
-        LevelsMusicController.StartNextWorldMusic();
+        LevelsMusicController.StartBossMusic();
     }
 
     public void BuySpeedBoots()
@@ -123,6 +133,7 @@ public class ShopManager : MonoBehaviour {
             Destroy(speedBootsUI.gameObject);
 
             PlayerStats.movementSpeed += speedBoost;
+            PlayerStats.speedBoosted = true;
         }
 
         if (doubleJump && EnoughMoney(doubleJumpPrice))

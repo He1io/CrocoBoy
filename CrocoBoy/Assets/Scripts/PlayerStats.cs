@@ -6,6 +6,7 @@ public class PlayerStats : MonoBehaviour
     public static PlayerStats instance;
 
     public static float movementSpeed = 6f;
+    public static bool speedBoosted = false;
 
     public float jumpForce = 100f;
 
