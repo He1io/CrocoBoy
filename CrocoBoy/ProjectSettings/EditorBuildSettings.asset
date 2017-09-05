@@ -38,3 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Boss 2.unity
     guid: dab5bbb388be66c4f9748999bc28686b
+  - enabled: 1
+    path: Assets/Level 3-1.unity
+    guid: 00000000000000000000000000000000

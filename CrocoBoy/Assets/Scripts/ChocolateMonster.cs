@@ -102,6 +102,8 @@ public class ChocolateMonster : Enemy {
 
         if (HP == 0)
         {
+            status.SetHealth(HP, maxHealth);
+
             //Destroy all bees in order to advance to the next lvl 
             GameMaster.instance.DestroyEnemies();
             StartCoroutine(GameMaster.instance.KillEnemy(this));

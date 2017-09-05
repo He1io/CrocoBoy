@@ -171,3 +171,17 @@ MonoBehaviour:
     randomVolume: 0
     randomPitch: 0
     loop: 0
+  - name: BlueBatShooting
+    clip: {fileID: 8300000, guid: 3e78d338e7b09c14892247a38e42d6ad, type: 3}
+    volume: 0.554
+    pitch: 1.5
+    randomVolume: 0
+    randomPitch: 0
+    loop: 0
+  - name: Soundtrack3
+    clip: {fileID: 8300000, guid: bfdd06dca84014a47bdc1ee22f01dfff, type: 3}
+    volume: 0.554
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+    loop: 0
