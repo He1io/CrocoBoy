@@ -57,8 +57,12 @@ public class BlueBat : Enemy
 
         if (shootDelay <= 0)
         {
-            AudioManager.instance.PlaySound("BlueBatShooting");
-            Shoot();
+            if (spriteRenderer.isVisible)
+            {
+                AudioManager.instance.PlaySound("BlueBatShooting");
+                Shoot();
+            }
+            
             shootDelay = 3f;
         }
 

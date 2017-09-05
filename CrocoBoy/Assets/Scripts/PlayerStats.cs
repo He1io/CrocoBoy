@@ -8,6 +8,8 @@ public class PlayerStats : MonoBehaviour
     public static float movementSpeed = 6f;
     public static bool speedBoosted = false;
 
+    public static bool invencibility = false;
+
     public float jumpForce = 100f;
 
     public static int startingMoney = 0;

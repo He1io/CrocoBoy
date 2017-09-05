@@ -55,6 +55,26 @@ public class GameMaster : MonoBehaviour {
     //KILL
     public IEnumerator KillPlayer(Player player)
     {
+        if (PlayerStats.invencibility) yield break ;
+        Animator animator = player.GetComponent<Animator>();
+
+        if (PlayerStats.startingMoney >= 5)
+        {
+            PlayerStats.startingMoney -= 5;
+        }
+
+        PlayerStats.money = PlayerStats.startingMoney;
+        animator.SetBool("Dead", true);
+        AudioManager.instance.PlaySound("Dead");
+        yield return new WaitForSeconds(0.9f);
+
+        Destroy(player.transform.gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    //KILL
+    public IEnumerator PlayerDown(Player player)
+    {
         Animator animator = player.GetComponent<Animator>();
 
         if (PlayerStats.startingMoney >= 5)

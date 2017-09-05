@@ -24,7 +24,7 @@ public class ShopManager : MonoBehaviour {
     bool doubleJump = false;
     int doubleJumpPrice = 300;
     bool shield = false;
-    int shieldPrice = 350;
+    int shieldPrice = 850;
 
     //Boost
     public float speedBoost = 2f;
@@ -46,6 +46,11 @@ public class ShopManager : MonoBehaviour {
         if (PlayerStats.speedBoosted == true)
         {
             Destroy(speedBootsUI.gameObject);
+        }
+
+        if (PlayerStats.invencibility == true)
+        {
+            Destroy(shieldUI.gameObject);
         }
     }
 
@@ -150,7 +155,11 @@ public class ShopManager : MonoBehaviour {
         if (shield && EnoughMoney(shieldPrice))
         {
             AudioManager.instance.PlaySound("Purchase");
-            //TODO
+            PlayerStats.money -= shieldPrice;
+            DisablePanel();
+            Destroy(shieldUI.gameObject);
+
+            PlayerStats.invencibility = true;
         }
     }
 }

@@ -71,7 +71,7 @@ public class Player : MonoBehaviour {
         if (transform.position.y <= fallBoundary)
         {
             animator.SetBool("Dead", true);
-            StartCoroutine(GameMaster.instance.KillPlayer(this));
+            StartCoroutine(GameMaster.instance.PlayerDown(this));
         }
 
         CheckGrounded();
@@ -181,8 +181,6 @@ public class Player : MonoBehaviour {
             //DEAD
             else
             {
-                //Interrupt jump & falling animations just in case and play the dead one
-                animator.SetBool("Dead", true);
                 StartCoroutine(GameMaster.instance.KillPlayer(this));
             }  
         }
@@ -190,8 +188,6 @@ public class Player : MonoBehaviour {
         if (collision.gameObject.tag == "Spike")
         {
             //DEAD
-            //Interrupt jump & falling animations just in case and play the dead one
-            animator.SetBool("Dead", true);
             StartCoroutine(GameMaster.instance.KillPlayer(this));
         }
 
@@ -224,8 +220,7 @@ public class Player : MonoBehaviour {
         if (collision.gameObject.tag == "Spike")
         {
             //DEAD
-            //Interrupt jump & falling animations just in case and play the dead one
-            animator.SetBool("Dead", true);
+
             StartCoroutine(GameMaster.instance.KillPlayer(this));
         }
     }
