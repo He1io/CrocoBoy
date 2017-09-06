@@ -57,6 +57,7 @@ public class GameMaster : MonoBehaviour {
     {
         if (PlayerStats.invencibility) yield break ;
         Animator animator = player.GetComponent<Animator>();
+        if (animator.GetBool("Dead")) yield break;
 
         if (PlayerStats.startingMoney >= 5)
         {
