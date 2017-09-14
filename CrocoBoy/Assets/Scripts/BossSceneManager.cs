@@ -22,6 +22,5 @@ public class BossSceneManager : MonoBehaviour {
         StartCoroutine(LevelsMusicController.StartNextWorldMusic());
         yield return new WaitForSeconds(2f);
         StartCoroutine(GameMaster.instance.NextLevel());
-
     }
 }

@@ -53,4 +53,15 @@ public class LevelsMusicController : MonoBehaviour
         instance.audioManager.PlaySound("Soundtrack" + currentWorld);
     }
 
+    public static IEnumerator StartCreditsMusic()
+    {
+        AudioManager.instance.StopSound("Boss");
+        AudioManager.instance.PlaySound("WorldComplete");
+        currentWorld = 1;
+        yield return new WaitForSeconds(2f);
+
+        //Stop boss music and play next world music
+        instance.audioManager.PlaySound("Credits");
+    }
+
 }

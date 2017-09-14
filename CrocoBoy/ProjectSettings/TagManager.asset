@@ -9,6 +9,7 @@ TagManager:
   - Spike
   - Boss
   - PauseMenu
+  - Poison
   layers:
   - Default
   - TransparentFX

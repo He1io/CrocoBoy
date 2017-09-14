@@ -43,4 +43,13 @@ EditorBuildSettings:
     guid: 378065dc885fecc4ab1ab670901b67aa
   - enabled: 1
     path: Assets/Level 3-2.unity
+    guid: f7d5dc2a0f05b7b47923c1e793550d84
+  - enabled: 1
+    path: Assets/Level 3-3.unity
     guid: 128fd6d872018af479c8fb9230887020
+  - enabled: 1
+    path: Assets/Shop 3.unity
+    guid: 13320f51dc9d86d42b0c0e8eb208cc26
+  - enabled: 1
+    path: Assets/Boss 3.unity
+    guid: 00000000000000000000000000000000
