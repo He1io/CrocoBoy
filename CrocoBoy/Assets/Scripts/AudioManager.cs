@@ -73,7 +73,7 @@ public class AudioManager : MonoBehaviour {
             sounds[i].SetSource(go.AddComponent<AudioSource>());
         }
         //First time instantiating AudioManager will be in the MainMenu
-        PlaySound("MusicMenu");
+        //PlaySound("MusicMenu");
     }
 
     public void PlaySound(string name)

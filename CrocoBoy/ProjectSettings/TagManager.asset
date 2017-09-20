@@ -10,6 +10,7 @@ TagManager:
   - Boss
   - PauseMenu
   - Poison
+  - Fireball
   layers:
   - Default
   - TransparentFX

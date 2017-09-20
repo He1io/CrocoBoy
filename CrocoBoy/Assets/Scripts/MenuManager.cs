@@ -20,6 +20,8 @@ public class MenuManager : MonoBehaviour {
 
     AudioManager audioManager;
 
+    bool musicPlaying = false;
+
     void Start()
     {
         audioManager = AudioManager.instance;
@@ -29,6 +31,17 @@ public class MenuManager : MonoBehaviour {
             Debug.LogError("No audiomanager found!");
         }
      }
+
+    void Update()
+    {
+        //If I start the mainMenu music in the Start() method and initialize AudioManager on the Awake(), 
+        //it seems like Unity do not have time enough to initialize Audiomanager and it does not work
+        if (!musicPlaying)
+        {
+            audioManager.PlaySound(mainMenuClip);
+            musicPlaying = true;
+        }
+    }
 
 	public void StartGame()
     {

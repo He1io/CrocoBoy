@@ -104,8 +104,10 @@ public class ChocolateMonster : Enemy {
         {
             status.SetHealth(HP, maxHealth);
 
-            //Destroy all bees in order to advance to the next lvl 
+            //Destroy all enemies and projectiles in order to advance to the next lvl 
             GameMaster.instance.DestroyEnemies();
+            GameMaster.instance.DestroyFireballs();
+            DestroySpikes();
             StartCoroutine(GameMaster.instance.KillEnemy(this));
         }
     }
@@ -132,5 +134,15 @@ public class ChocolateMonster : Enemy {
 
 
         lightningActive = true;
+    }
+
+    public void DestroySpikes()
+    {
+        GameObject[] spikes = GameObject.FindGameObjectsWithTag("Spike");
+
+        foreach (GameObject spike in spikes)
+        {
+            Destroy(spike);
+        }
     }
 }

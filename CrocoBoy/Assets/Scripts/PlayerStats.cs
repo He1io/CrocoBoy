@@ -29,4 +29,12 @@ public class PlayerStats : MonoBehaviour
         money = startingMoney;
     }
 
+    public static void RestartStats()
+    {
+        movementSpeed = 6f;
+        speedBoosted = false;
+        invencibility = false;
+        startingMoney = 0;
+    }
+
 }

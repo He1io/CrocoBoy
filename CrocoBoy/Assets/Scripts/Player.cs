@@ -68,7 +68,7 @@ public class Player : MonoBehaviour {
         }
 
         //FALL DOWN
-        if (transform.position.y <= fallBoundary)
+        if (transform.position.y <= fallBoundary )
         {
             animator.SetBool("Dead", true);
             StartCoroutine(GameMaster.instance.PlayerDown(this));

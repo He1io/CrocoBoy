@@ -7,7 +7,7 @@ public class LevelsMusicController : MonoBehaviour
     public static LevelsMusicController instance;
 
     public static int currentWorld = 1;
-    public static bool playerDiedInBossFight = false;
+    //public static bool playerDiedInBossFight = false;
 
     private AudioManager audioManager;
 
@@ -60,7 +60,6 @@ public class LevelsMusicController : MonoBehaviour
         currentWorld = 1;
         yield return new WaitForSeconds(2f);
 
-        //Stop boss music and play next world music
         instance.audioManager.PlaySound("Credits");
     }
 

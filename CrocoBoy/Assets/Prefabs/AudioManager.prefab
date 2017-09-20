@@ -55,7 +55,7 @@ MonoBehaviour:
   - name: Coin
     clip: {fileID: 8300000, guid: 70275a971877f864e9c3125c8b5272ec, type: 3}
     volume: 1
-    pitch: 1.001
+    pitch: 0.999
     randomVolume: 0
     randomPitch: 0
     loop: 0
@@ -180,6 +180,13 @@ MonoBehaviour:
     loop: 0
   - name: Soundtrack3
     clip: {fileID: 8300000, guid: bfdd06dca84014a47bdc1ee22f01dfff, type: 3}
+    volume: 0.554
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+    loop: 1
+  - name: Credits
+    clip: {fileID: 8300000, guid: 76b2fa76fc310f14ab2bdad88a780a65, type: 3}
     volume: 0.554
     pitch: 1
     randomVolume: 0

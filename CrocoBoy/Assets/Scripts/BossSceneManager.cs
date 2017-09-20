@@ -7,10 +7,11 @@ public class BossSceneManager : MonoBehaviour {
     public Transform worldComplete;
     bool levelPassed = false;
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
         if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && !levelPassed)
         {
+            FindObjectOfType<Player>().fallBoundary = -99999;
             StartCoroutine(NextWorld());
         }
 	}

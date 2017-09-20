@@ -23,10 +23,6 @@ public class Skull : Enemy
 
     public int pointSelection;
 
-    //Game Finished
-    bool levelPassed = false;
-    public Transform worldComplete;
-
     void Start()
     {
         HP = maxHealth;
@@ -86,17 +82,6 @@ public class Skull : Enemy
             AudioManager.instance.PlaySound("Boss1Hitted");
 
         }
-
-        if (HP == 0 && !levelPassed)
-        {
-            GameMaster.instance.DestroyEnemies();
-            DestroySpikes();
-            StartCoroutine(GameMaster.instance.KillEnemy(this));
-
-            levelPassed = true;
-            worldComplete.gameObject.SetActive(true);
-            StartCoroutine(LevelsMusicController.StartCreditsMusic());
-        }
     }
 
     public override void OnCollisionEnter2D(Collision2D collision)
@@ -106,15 +91,5 @@ public class Skull : Enemy
             DamageEnemy();
         }
        
-    }
-
-    public void DestroySpikes()
-    {
-        GameObject[] spikes = GameObject.FindGameObjectsWithTag("Spike");
-
-        foreach (GameObject spike in spikes)
-        {
-            Destroy(spike);
-        }
-    }
+    }    
 }

@@ -7,7 +7,7 @@ public class GameMaster : MonoBehaviour {
 
     public static GameMaster instance;
 
-    public float chestSoundsInterval = 0.3f;
+    public float chestSoundsInterval = 0.01f;
     //References
     private AudioManager audioManager;
     private GameObject pauseMenu;
@@ -36,6 +36,7 @@ public class GameMaster : MonoBehaviour {
 
     void Update()
     {
+
         //When we pause, stop the game and toggle the active state of the PauseMenu
         if (Input.GetButtonDown("Pause"))
         {
@@ -49,7 +50,7 @@ public class GameMaster : MonoBehaviour {
                 pauseMenu.SetActive(!pauseMenu.activeSelf);
                 Time.timeScale = 1;
             }
-        }
+        }   
     }
 
     //KILL
@@ -119,9 +120,23 @@ public class GameMaster : MonoBehaviour {
         }
     }
 
+    public void DestroyFireballs()
+    {
+        GameObject[] fireballs = GameObject.FindGameObjectsWithTag("Fireball");
+
+        foreach (GameObject fireball in fireballs)
+        {
+            Destroy(fireball);
+        }
+    }
+
     public IEnumerator OpenChest(Chest chest)
     {
+        //It allows me to avoid the player's death when falling down after openning a chest or klling a boss
+        FindObjectOfType<Player>().fallBoundary = -99999;
+
         DestroyEnemies();
+        DestroyFireballs();
         //Play coin sounds and increment amount of money
         for (int i = 0; i < chest.amountOfCoins; i++)
         {
@@ -131,12 +146,14 @@ public class GameMaster : MonoBehaviour {
         }
 
         StartCoroutine(NextLevel());
-
     }
 
     public IEnumerator OpenChestPreBoss(ChestPreBoss chest)
     {
+        FindObjectOfType<Player>().fallBoundary = -99999;
+
         DestroyEnemies();
+        DestroyFireballs();
         //Play coin sounds and increment amount of money
         for (int i = 0; i < chest.amountOfCoins; i++)
         {
@@ -152,6 +169,7 @@ public class GameMaster : MonoBehaviour {
     //NEXT LEVEL
     public IEnumerator NextLevel()
     {
+
         float fadeTime = GetComponent<Fading>().BeginFade(1);
         yield return new WaitForSeconds(fadeTime);
 
