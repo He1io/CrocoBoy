@@ -54,6 +54,20 @@ public class ShopManager : MonoBehaviour {
         }
     }
 
+    void Update()
+    {
+        //Button A
+        if (Input.GetButtonDown("ButtonA"))
+        {
+            NextLevel();
+        }
+        //Button B
+        if (Input.GetButtonDown("ButtonB"))
+        {
+            QuitGame();
+        }
+    }
+
     public void QuitGame()
     {
         audioManager.PlaySound(pressButtonSound);

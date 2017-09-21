@@ -41,6 +41,17 @@ public class MenuManager : MonoBehaviour {
             audioManager.PlaySound(mainMenuClip);
             musicPlaying = true;
         }
+
+        //Button A
+        if (Input.GetButtonDown("ButtonA"))
+        {
+            StartGame();
+        }
+        //Button B
+        if (Input.GetButtonDown("ButtonB"))
+        {
+            QuitGame();
+        }
     }
 
 	public void StartGame()

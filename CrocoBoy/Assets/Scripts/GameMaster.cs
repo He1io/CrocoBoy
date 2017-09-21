@@ -40,15 +40,21 @@ public class GameMaster : MonoBehaviour {
         //When we pause, stop the game and toggle the active state of the PauseMenu
         if (Input.GetButtonDown("Pause"))
         {
+            Player player = GameObject.FindObjectOfType<Player>();
+
             if (Time.timeScale == 1)
             {
                 pauseMenu.SetActive(!pauseMenu.activeSelf);
                 Time.timeScale = 0;
+                //Disable the player script to prevent the jump when pressing A button to resume the Pause menu
+                //I enable it again here when pressing PAUSE, and in PauseMenu script in ResumeGame()
+                player.enabled = false;
             }
             else
             {
                 pauseMenu.SetActive(!pauseMenu.activeSelf);
                 Time.timeScale = 1;
+                player.enabled = true;
             }
         }   
     }

@@ -14,9 +14,6 @@ public class PauseMenu : MonoBehaviour
     string pressButtonSound = "ButtonPress";
 
     AudioManager audioManager;
-    Button[] buttons;
-    int currentButton = 0;
-    int previousButton = -1;
 
     void Start()
     {
@@ -26,34 +23,25 @@ public class PauseMenu : MonoBehaviour
         {
             Debug.LogError("No audiomanager found!");
         }
-
-        buttons = GetComponentsInChildren<Button>();
     }
     
     void Update()
     {
-
-        if (Input.GetAxis("Vertical") != 0)
+        //Button A
+        if (Input.GetButtonDown("ButtonA"))
         {
-            if(previousButton != -1)
-            {
-                buttons[previousButton].animator.SetTrigger("Normal");
-            }
-
-            buttons[currentButton].animator.SetTrigger("Highlighted");
-            previousButton = currentButton;
-            currentButton++;
-
-            if (currentButton == buttons.Length)
-            {
-                currentButton = 0;
-            }
+            ResumeGame();
         }
-
+        //Button B
+        if (Input.GetButtonDown("ButtonB"))
+        {
+            QuitGame();
+        }
     }
     
     public void ResumeGame()
     {
+        GameObject.FindObjectOfType<Player>().enabled = true;
         Time.timeScale = 1;
         this.gameObject.SetActive(false);
         audioManager.PlaySound(pressButtonSound);
