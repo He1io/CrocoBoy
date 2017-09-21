@@ -59,12 +59,44 @@ public class ShopManager : MonoBehaviour {
         //Button A
         if (Input.GetButtonDown("ButtonA"))
         {
-            NextLevel();
+            if(panel.gameObject.activeSelf == true)
+            {
+                ConfirmPurchase();
+            }
+            else
+            {
+                NextLevel();
+            }
         }
         //Button B
         if (Input.GetButtonDown("ButtonB"))
         {
-            QuitGame();
+            if (panel.gameObject.activeSelf == true)
+            {
+                DisablePanel();
+            }
+            else
+            {
+                QuitGame();
+            }
+        }
+
+        //Button X
+        if (Input.GetButtonDown("ButtonX") && panel.gameObject.activeSelf == false)
+        {
+            BuySpeedBoots();
+        }
+
+        //Button Y
+        if (Input.GetButtonDown("ButtonY") && panel.gameObject.activeSelf == false)
+        {
+            BuyDoubleJump();
+        }
+
+        //Button RB
+        if (Input.GetButtonDown("ButtonRB") && panel.gameObject.activeSelf == false)
+        {
+            BuyShield();
         }
     }
 
@@ -84,7 +116,6 @@ public class ShopManager : MonoBehaviour {
     public void ActivePanel()
     {
         panel.gameObject.SetActive(true);
-        
     }
 
     public void DisablePanel()
@@ -111,7 +142,7 @@ public class ShopManager : MonoBehaviour {
     }
     public void BuyDoubleJump()
     {
-        if (EnoughMoney(speedBootsPrice))
+        if (EnoughMoney(doubleJumpPrice))
         {
             ActivePanel();
             doubleJump = true;
@@ -120,7 +151,7 @@ public class ShopManager : MonoBehaviour {
 
     public void BuyShield()
     {
-        if (EnoughMoney(speedBootsPrice))
+        if (EnoughMoney(shieldPrice))
         {
             ActivePanel();
             shield = true;

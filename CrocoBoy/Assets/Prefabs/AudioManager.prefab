@@ -142,7 +142,7 @@ MonoBehaviour:
     pitch: 1
     randomVolume: 0
     randomPitch: 0
-    loop: 0
+    loop: 1
   - name: Soundtrack2
     clip: {fileID: 8300000, guid: 081c3b7bcdd00974f85d2fc27a92bcd5, type: 3}
     volume: 0.477
