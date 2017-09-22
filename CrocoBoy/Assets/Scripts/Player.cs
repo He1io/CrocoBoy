@@ -197,6 +197,7 @@ public class Player : MonoBehaviour {
             transform.parent = collision.transform;
             //Disable the checking of falling state
             fallingCheck = false;
+            rb.interpolation = RigidbodyInterpolation2D.None;
         }
     }
 
@@ -209,8 +210,9 @@ public class Player : MonoBehaviour {
             { 
                 transform.parent = null;
                 fallingCheck = true;
+                rb.interpolation = RigidbodyInterpolation2D.Extrapolate;
             }
-            
+
         }
         
     }
